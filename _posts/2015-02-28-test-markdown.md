@@ -83,7 +83,7 @@ You can add notification, warning and error boxes like this:
 
 2.Sophie said many things.
  * when she's councious
-  * she might be councious when she's asleep!
+   * she might be councious when she's asleep!
  * when she's under influence
 
 3. Each time Sophie gives me a shopping list before I come to NYC:
