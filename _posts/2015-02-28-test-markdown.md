@@ -11,6 +11,8 @@ You can write regular [markdown](http://markdowntutorial.com/) here and Jekyll w
 
 **Here is some bold text**
 
+_Here is something italic_
+
 ## Here is a secondary heading
 
 Here's a useless table:
@@ -71,3 +73,10 @@ You can add notification, warning and error boxes like this:
 
 {: .box-error}
 **Error:** This is an error box.
+
+Sophie said,
+>"Fun, right?"
+>
+>"Unbelievable!"
+
+Sophie said many things.
