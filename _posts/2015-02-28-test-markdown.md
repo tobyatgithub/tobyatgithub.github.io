@@ -87,7 +87,7 @@ You can add notification, warning and error boxes like this:
  * when she's under influence
 
 3. Each time Sophie gives me a shopping list before I come to NYC:
- 1. Paper
- 2. Paper
- 3. Paper
+  1. Paper
+  2. Paper
+  3. Paper
  As you may have noticed, she's not a common girl.
