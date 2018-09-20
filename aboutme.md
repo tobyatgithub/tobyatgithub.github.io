@@ -1,16 +1,14 @@
 ---
+# notice it takes a while to update
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Why you'd believe that life can be better
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Toby Huang! I have the following qualities:
 
-- I rock a great mustache. balabalfasfads
-- I'm extremely loyal to my family
+-Ever-learning Data Analyst (Github @ TobyatLarge) ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀
+-Ammeter video artist (https://vimeo.com/tobyatlarge) ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀
+-Serial Entrepreneur with first-hand experience and systematic knowledge.
+(curiosity + focus) x discipline.
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
