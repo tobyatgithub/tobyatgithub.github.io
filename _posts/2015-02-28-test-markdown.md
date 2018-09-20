@@ -74,9 +74,19 @@ You can add notification, warning and error boxes like this:
 {: .box-error}
 **Error:** This is an error box.
 
-Sophie said,
->"Fun, right?"
->
->"Unbelievable!"
+Sophie
+1.Sophie said,
+ >"Fun, right?"
+ >
+ >"Unbelievable!"
 
-Sophie said many things.
+2.Sophie said many things.
+ * when she's councious
+  * she might be councious when she's asleep!
+ * when she's under influence
+
+3. Each time Sophie gives me a shopping list before I come to NYC:
+ 1. Paper
+ 2. Paper
+ 3. Paper
+ As you may have noticed, she's not a common girl.
