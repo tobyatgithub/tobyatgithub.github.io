@@ -30,9 +30,9 @@ Linear regression is a prediction method that is more than 200 years old. (Simpl
 
 ### basic math shape:  
 i.e. y = a_1 * x_1 + a_2 * x_2 + a_3 * x_3 +... + a_n * x_n + b, where a_i and b \in R.  
-In matrix-vector expression, y = Xw + b  
+In matrix-vector expression, y = WX + b  
 
-### manipulating the model:  
+### loss function and optimizer:  
 For us to minimize the error (loss function), we need some mechanism to alter the model (optimization). For linear regression, any common optimizer is fine, and we usually use the SGD as optimizer. Most loss functions for regression are fine for this job, and one common loss function is **mean square loss**, which is defined as 
 ```python
 math.mean((y_pred-y)**2)
@@ -40,4 +40,30 @@ math.mean((y_pred-y)**2)
 
 ### reference:  
 A great example of realizing this in a neural network context with data iterators is from [linear regression from scratch in gluon](https://gluon.mxnet.io/chapter02_supervised-learning/linear-regression-scratch.html)
+
+## 2. Logistic Regression  
+### background:  
+Regression is the hammer we reach for when we want to answer how much? or how many? questions. Based on our experience, in industry, we’re more often interested in making categorical assignments. Traditionally, a whole family of SVM algorithms pursues the approach of trying to draw a line that best separates given data points to determine different classes. However, we usually aprproach the problem differently in neural networks.  
+
+### basic math shape:  
+i.e. Instead of just trying to separate the points, we train a probabilistic classifier which estimates, for each data point, the conditional probability that it belongs to one of the classes. Logistic regression is such an approach.  
+Logistic regression is built upon linear regression with a slight modification:  
+
+```python
+y = sigmoid(WX + b),
+
+def sigmoid(z):
+  return 1./(1. + exp(-z))
+```
+Sigmoid function is chosen because it outputs a value between 0 and 1, which is more resonable to think of it as a probability. 
+Note that an input of 0 gives a value of .5. So in the common case, where we want to predict positive whenever the probability is greater than .5 and negative whenever the probability is less than .5.  
+
+### loss function and optimizer:  
+If we interpret y_i_\hat as the probability that the i-th example  belongs to the positive class (y_i = 1), then 1 - y_i_\hat is the probability that the i-th example belongs to the negative class (y_i = 0). Thus, by combining this probability assumption, we can define our loss function as a **binary cross-entropy loss**:  
+
+```python
+Loss = - sum( y_i * log(y_i_\hat) + (1 - y_i) * log(1 - y_i_\hat))
+```
+
+This loss function is commonly called __log loss__ and is also commonly referred to as __binary cross entropy__. It is a special case of negative log likelihood. And it is a special case of cross-entropy, which can apply to the multi-class (>2) setting.  
 
