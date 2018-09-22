@@ -13,6 +13,18 @@ As acknowledged by Sophie, I'm going to use David Rosenburg's material for his m
 
 Here we go.  
 
+# Menu:
+ * Loss Function
+ * Optimizer
+ * Linear Regression
+ * Logistic Regression
+ * SVM (maybe...)
+ * Multiclass Logistic
+ * XGBoost
+ * CNN
+ * RNN
+
+
 ## Loss Function  
 In order to say whether we've done a good job, we need some way to measure the quality of a model.  
 Generally, we will define a __loss function__ that says how far are our predictions from the correct answers. 
@@ -66,4 +78,47 @@ Loss = - sum( y_i * log(y_i_\hat) + (1 - y_i) * log(1 - y_i_\hat))
 ```
 
 This loss function is commonly called __log loss__ and is also commonly referred to as __binary cross entropy__. It is a special case of negative log likelihood. And it is a special case of cross-entropy, which can apply to the multi-class (>2) setting.  
+
+## 2.5 Logistic regression with multiple classes  
+### background:  
+Binary logistic regression is great and useful, but in many cases, there will be more than 2 classes. One naive way to handle that is to build __n__ logistic regression models, each one is __x_i__ vs. all.  
+
+### math:  
+However, there's a smarter way to go about this. Under a neural network setting, we can force the ourput layer to be a discrete probability distribution over the k classes. We accomplish this by using the __softmax__ function, which does the following two things:
+  1. it exponentiates (elementwise) e^z, forcing all values to be strictly positive.  
+  2. it normalizes so that all values sum to 1, as  
+  ```python
+  def softmax(z):
+     return exp(z) / (math.sum(exp(z_i))), for i in range(1,k)
+  
+  y = softmax(WX + B)
+  ```
+
+### loss function and optimizer:  
+Fortunately, we can use same optimizer as in binary logistic regression + two minor tweaks in label and loss function:
+* onthot encoding y so that y = 5 --> y = [0,0,0,0,1,0,0]  
+* loss function -> -sum(y_i * log(y_i_hat))  
+
+
+
+
+## 3. SVM (maybe) 
+### background:  
+Initially i was thinking...yeah definitely I shall put SVM on it since Sophie suggested that this one is very 'original' and has been fundation for many other algorithms. However, so far all the document I found about SVM are very math-heavy in a sense that we were trying to find close form optimization solutions to convex SVMs...which I really don't like.  
+And probably the best explainer one will ever find is the SVM chapter from the book ISLR (Chp9, p337, 6th edition). I will do a very brief summary over here:  
+
+### math:  
+SVM (the support vector machine) is a generalization of a simple and intuitive classifer called the maximal margin classifer, to accept non-purely-separable cases (by __soft margin__), and to be able to draw non-linear class boundaries (by bring higher orders into the assumed function).  
+Notice that only a small portion of data is important to SVM. __support vecotrs__ in fact are the obeservations that lie directly on the margin or on the wrong side of the margin for their class. Any other observations actually won't affect the result of SVM.
+```python
+f(x) = b + sum(a_i * np.dot(x, x_i) for i \in Set (Support vectors)
+```
+
+### tweak:  
+the __np.dot()__ from above will yield a linear boundary. However, we can easily apply some non-linear function onto that dot product to produce non-linear boundary. Thus warp up the SVM.
+
+
+## 4. Boosting Decision Trees  
+
+
 
