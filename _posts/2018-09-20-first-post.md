@@ -19,6 +19,7 @@ Generally, we will define a __loss function__ that says how far are our predicti
 
 ## Optimization  
 The process of minizing the error of our function is called optimization. For most algorithms we gonna see, one standard approach is called gradient descent.  
+
 i.e. W* = W - learning_rate * W.grad, where W.grad = d_lossfunction / d_W  
 
 However, calculation of gradient tends to be expensive and slow. As a result, one common and popular way to do the gradient descent is called SGD (stocastic gradient descent, or mini-batch gradient descent,) where we only randomly pick a small portion of data to do the gradient calculation.  
@@ -29,8 +30,14 @@ Linear regression is a prediction method that is more than 200 years old. (Simpl
 
 ### basic math shape:  
 i.e. y = a_1 * x_1 + a_2 * x_2 + a_3 * x_3 +... + a_n * x_n + b, where a_i and b \in R.  
+In matrix-vector expression, y = Xw + b  
 
 ### manipulating the model:  
-For us to minimize the error (loss function), we need some mechanism to alter the model. We do this by choosing the values of the parameters w and b. This is the only job of the learning algorithm. i.e. We'll try to find the weight vector w and bias term b (also called an offset or intercept) that approximately associate data points x_i with their corresponding labels y_i. 
+For us to minimize the error (loss function), we need some mechanism to alter the model (optimization). For linear regression, any common optimizer is fine, and we usually use the SGD as optimizer. Most loss functions for regression are fine for this job, and one common loss function is **mean square loss**, which is defined as 
+```python
+math.mean((y_pred-y)**2)
+```
 
+### reference:  
+A great example of realizing this in a neural network context with data iterators is from [linear regression from scratch in gluon](https://gluon.mxnet.io/chapter02_supervised-learning/linear-regression-scratch.html)
 
