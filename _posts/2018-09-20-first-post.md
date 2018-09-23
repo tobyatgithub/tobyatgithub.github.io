@@ -14,16 +14,20 @@ As acknowledged by Sophie, I'm going to use David Rosenburg's material for his m
 Here we go.  
 
 # Menu:
- * Loss Function
- * Optimizer
- * Resampling
- * Linear Regression
- * Logistic Regression
- * SVM (maybe...)
- * Multiclass Logistic
- * XGBoost
- * CNN
- * RNN
+ * Basic Theories
+   * Loss Function
+   * Optimizer
+   * Resampling
+ 
+ 
+ * Famous Models
+   * Linear Regression
+   * Logistic Regression
+   * SVM (maybe...)
+   * Multiclass Logistic
+   * XGBoost
+   * CNN
+   * RNN
 
 
 ## Loss Function:  
@@ -43,9 +47,11 @@ Resampling means repeatedly drawing samples from a training set. __(!!! I'm not 
     * used to estimate the test error associated with a given model to evaluate its performace.
     * leave-one-out cross-validation: for n data rows, each time hold on data row out from training set and build a model based on that training set. Use the holded one to evaludate. Testing error = math.mean(MSE_i), for i = 1...n
     * k-fold cross-validation: randomly dividing the data into k groups of appoximately equal size. One group is holded as the validation set, and the model will fit on the remaining k-1 groups. Repeat k times, testing error = math.mean(MSE_i), for i = 1...k  
+    * Generally **k-fold CV** often gives more accurate estimates of the test error than loocv. 
+    
   2. Bootstrap:  
     * used to provide a measure of accuracy of a parameter estimate.
-[^1]: ISLR 6th dition p181
+
 
 ## 1. Simple Linear Regression  
 ### background:  
@@ -132,4 +138,6 @@ the __np.dot()__ from above will yield a linear boundary. However, we can easily
 ## 4. Boosting Decision Trees  
 
 
-
+  
+  
+[^1]: ISLR 6th dition p181
