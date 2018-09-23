@@ -91,5 +91,7 @@ You can add notification, warning and error boxes like this:
   * Paper
   * Paper
   
-As you may have noticed, she's not a _common_ girl.
+As you may have noticed, she's not a _common_ girl[^1].
+
+[^1]: toby said this on 9/22/2018
 
