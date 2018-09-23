@@ -16,6 +16,7 @@ Here we go.
 # Menu:
  * Loss Function
  * Optimizer
+ * Resampling
  * Linear Regression
  * Logistic Regression
  * SVM (maybe...)
@@ -25,16 +26,26 @@ Here we go.
  * RNN
 
 
-## Loss Function  
+## Loss Function:  
 In order to say whether we've done a good job, we need some way to measure the quality of a model.  
 Generally, we will define a __loss function__ that says how far are our predictions from the correct answers. 
 
-## Optimization  
+## Optimization:  
 The process of minizing the error of our function is called optimization. For most algorithms we gonna see, one standard approach is called gradient descent.  
 
 i.e. W* = W - learning_rate * W.grad, where W.grad = d_lossfunction / d_W  
 
 However, calculation of gradient tends to be expensive and slow. As a result, one common and popular way to do the gradient descent is called SGD (stocastic gradient descent, or mini-batch gradient descent,) where we only randomly pick a small portion of data to do the gradient calculation.  
+
+## Resampling:  
+Resampling means repeatedly drawing samples from a training set. __(!!! I'm not super sure why their purpose.)__ A general explaination is that, if you don't have enough data, you shall resample to generate more data (no matter for training sake or evaluation sake.)
+  1. Cross-validation[^1]:  
+    * used to estimate the test error associated with a given model to evaluate its performace.
+    * leave-one-out cross-validation: for n data rows, each time hold on data row out from training set and build a model based on that training set. Use the holded one to evaludate. Testing error = math.mean(MSE_i), for i = 1...n
+    * k-fold cross-validation: randomly dividing the data into k groups of appoximately equal size. One group is holded as the validation set, and the model will fit on the remaining k-1 groups. Repeat k times, testing error = math.mean(MSE_i), for i = 1...k  
+  2. Bootstrap:  
+    * used to provide a measure of accuracy of a parameter estimate.
+[^1]: ISLR 6th dition p181
 
 ## 1. Simple Linear Regression  
 ### background:  
