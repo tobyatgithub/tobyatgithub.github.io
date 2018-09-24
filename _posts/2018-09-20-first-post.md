@@ -25,7 +25,7 @@ Here we go.
    * Logistic Regression
    * SVM (maybe...)
    * Multiclass Logistic
-   * XGBoost
+   * XGBoost (gradient boosting tree)
    * CNN
    * RNN
 
@@ -43,15 +43,18 @@ However, calculation of gradient tends to be expensive and slow. As a result, on
 
 ## Resampling:  
 Resampling means repeatedly drawing samples from a training set. __(!!! I'm not super sure why their purpose.)__ A general explaination is that, if you don't have enough data, you shall resample to generate more data (no matter for training sake or evaluation sake.) However, it seems a more accurate one is, cross-validation can give you a better estimate about how your testing error will look like during training time, (which is quite useful in most traditional models. However I doubt whether we still need it under neural network context.[^nf])
-  1. Cross-validation[^1]:  
-    * used to estimate the test error associated with a given model to evaluate its performace.
+  1. Cross-validation[^1]: 
+    * = any of various similar model validation techniques for assessing model performance.
     * leave-one-out cross-validation: for n data rows, each time hold on data row out from training set and build a model based on that training set. Use the holded one to evaludate. Testing error = math.mean(MSE_i), for i = 1...n
     * k-fold cross-validation: randomly dividing the data into k groups of appoximately equal size. One group is holded as the validation set, and the model will fit on the remaining k-1 groups. Repeat k times, testing error = math.mean(MSE_i), for i = 1...k  
+    * In addition, multiple rounds of k-fold cross-validation is usually performed with different partitions and validation results are combined to give an estimate.
     * Generally **k-fold CV** often gives more accurate estimates of the test error than loocv (loocv has lower bias as it almost use all data every time but has higher variance).  
     ![figure 5.8 from ISLR](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/_posts/Screen%20Shot%202018-09-23%20at%204.32.56%20PM.png#center)
     
   2. Bootstrap:  
-    * used to provide a measure of accuracy of a parameter estimate.
+    * = any test or metric that relies on random sampling with replacement.
+    * can be used to measure of accuracy of a model, or estimate the standard errors of the coefficients. However, in a more common sense, it has been widely used in decision trees to as an ensemble method to make the model more general. As we will see in the XGBoost session.
+
 
 
 ## 1. Simple Linear Regression  
@@ -136,9 +139,10 @@ f(x) = b + sum(a_i * np.dot(x, x_i) for i \in Set (Support vectors)
 the __np.dot()__ from above will yield a linear boundary. However, we can easily apply some non-linear function onto that dot product to produce non-linear boundary. Thus warp up the SVM.
 
 
-## 4. Boosting Decision Trees  
-
-
+## 4. Gradient Boosting Decision Trees (XGBoost)  
+### background:  
+Gradient boosting is an approach where new models are created that predict the residuals or errors of prior models and then added (aggregate) together to make the final prediction. It's called "gradient" because it uses gradient descent to minimize the loss.  
+XGBoost is an optimized library for gradient boosting decision tree. It provides a parallel tree boosting 
   
   
 [^1]: ISLR 6th dition p181
