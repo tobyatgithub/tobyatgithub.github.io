@@ -26,8 +26,9 @@ Here we go.
    * SVM (maybe...)
    * Multiclass Logistic
    * XGBoost (gradient boosting tree)
-   * CNN
+   * Reinforce Learning
    * RNN
+   * CNN
 
 
 ## Loss Function:  
@@ -152,11 +153,12 @@ Interestingly, XGBoost provides a parallel processing to speed up (**optimize**)
 ![Information Gain](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/_data/Information_Gain.png)  
 
 ### reference:  
-![xgboost官方tutorial](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
-![complete guide to parameter tunning in xgboost](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/) 
+![xgboost官方tutorial](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)  
+![complete guide to parameter tunning in xgboost](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/)   
   
   
-  
+## 5. Reinforce Learning!  
+(hahaha, was planing as cnn-rnn-rl, but what the hell. I'm waaaayyyy more interested in rl!)  
   
   
 [^1]: ISLR 6th dition p181  
