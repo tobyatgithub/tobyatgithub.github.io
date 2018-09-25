@@ -141,9 +141,19 @@ the __np.dot()__ from above will yield a linear boundary. However, we can easily
 
 ## 4. Gradient Boosting Decision Trees (XGBoost)  
 ### background:  
-Gradient boosting is an approach where new models are created that predict the residuals or errors of prior models and then added (aggregate) together to make the final prediction. It's called "gradient" because it uses gradient descent to minimize the loss.  
-XGBoost is an optimized library for gradient boosting decision tree. It provides a parallel tree boosting 
+Gradient boosting is an ensumble approach where multiple "weak" models are created and then added (aggregate) together to make the final prediction. XGBoost is an optimized library for gradient boosting decision tree (parallelization, distributed computing, out-of-core computing, and cache optimization. [^nm]) A technical called **additive training** is used here, since one can not simply take the gradient of a tree structure. In additive training, we fix what we have learned, and add one new tree at a time to optimize that local step. 
+
+
+
+It provides a parallel tree boosting 
+  
+  
+  
+  
+  
+  
   
   
 [^1]: ISLR 6th dition p181
-[^nf]: need fix/confirm
+[^nf]: need fix/confirm  
+[^nm]: need more info
