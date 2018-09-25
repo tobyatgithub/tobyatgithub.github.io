@@ -151,13 +151,15 @@ Interestingly, XGBoost provides a parallel processing to speed up (**optimize**)
  However, it's not that practical to use those loss function + regularization during training with gradient to judge. Instead, we use a term called information grain, which is the the summation of new leafs, original leafs, and regularization.  
 ![Information Gain](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/_data/Information_Gain.png)  
 
+### reference:  
+![xgboost官方tutorial](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
+![complete guide to parameter tunning in xgboost](https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/) 
   
   
   
   
   
-  
-[^1]: ISLR 6th dition p181
-[^2]: [parallel gradient bossting additive tree](http://zhanpengfang.github.io/418home.html)
-[^nf]: need fix/confirm  
-[^nm]: need more info
+[^1]: ISLR 6th dition p181  
+[^2]: [parallel gradient bossting additive tree](http://zhanpengfang.github.io/418home.html)  
+[^nf]: need fix/confirm   
+[^nm]: need more info  
