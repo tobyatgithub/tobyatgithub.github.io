@@ -143,11 +143,14 @@ the __np.dot()__ from above will yield a linear boundary. However, we can easily
 ### background:  
 Gradient boosting is an ensumble approach where multiple "weak" models are created and then added (aggregate) together to make the final prediction. XGBoost is an optimized library for gradient boosting decision tree (parallelization, distributed computing, out-of-core computing, and cache optimization. [^nm]) A technical called **additive training** is used here, since one can not simply take the gradient of a tree structure. In additive training, we fix what we have learned, and add one new tree at a time to optimize that local step. 
 
-
-
-It provides a parallel tree boosting 
+### loss function and optimizer:  
+MSE and logistic loss are two common loss functions for XGBoost, and a regularization term is always recommend to control overfit. Most common loss functions can be re-formulated and compress into smaller forms given the fact that all data points on the same leaf get the same score.  
+Interestingly, XGBoost provides a parallel processing to speed up (**optimize**) this training process. How could an additive model be parallel?! The answer is simpe yet clever. Trees are additive, however each node (leafs) is trained in a parallel fashion! (since each leaf will only pick one feature as the criteria to split.)[^2]  
   
-  
+### math (with loss function):
+ However, it's not that practical to use those loss function + regularization during training with gradient to judge. Instead, we use a term called information grain, which is the the summation of new leafs, original leafs, and regularization.  
+![Information Gain](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/_data/Information_Gain.png)  
+
   
   
   
@@ -155,5 +158,6 @@ It provides a parallel tree boosting
   
   
 [^1]: ISLR 6th dition p181
+[^2]: [parallel gradient bossting additive tree](http://zhanpengfang.github.io/418home.html)
 [^nf]: need fix/confirm  
 [^nm]: need more info
