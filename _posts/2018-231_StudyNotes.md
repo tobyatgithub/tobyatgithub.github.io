@@ -4,10 +4,17 @@ title: Study Notes of 231 CNN
 ---
 
 ## **General**
-This year, I decided to revist the class 231 offered by stanford online featured in [Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).  
-One major reason is that I wasn't able to understand many details and reasoning behind it when I watch is last time around 2016. After gaining more experience, I now feel much more confident on the convolutional neural network and all the deep learning topics the class is covering. Plus, the content of the class is one of the best resource online about deep learning (as mentioned in [wild_ml's 2017 AI&DL Year Review](http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/)). Thus I feel an urge and necessity to learn it in a finer detail.  
+This year, I decided to revist the class 231 offered by stanford [Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).  
+
+One major reason is because I feel an urge and necessity to learn it again in a finer detail. When I watched it last time during 2016, I wasn't able to fully understand and appreciate many details and reasonings behind the materials.  
+
+After gaining more experience, I now feel much more comfortable on the convolutional neural network and common deep learning topics this course covers.  
+
+Plus, the content of the class is one of the best resource online about deep learning (as mentioned in [wild_ml's 2017 AI&DL Year Review](http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/)).  
+
 This blog here is by no means to copy & paste the lecture content---that will be wastful and meaningless. But instead, this blog serves more like a __'cheat sheet'__ of the materials.  
-From my previous experience, a 'cheat sheet' is really a great way to enforce student to really try hard summarizing what they have learned from one class, and thus a really helpful tool for studying. In additional, it will be useful in the future if I ever need to find a quick reference or refreshment on some of the topic.
+
+From my previous experience, a 'cheat sheet' is really a great way to enforce student to really try hard summarizing what they have learned from one class, and thus a really helpful tool for studying. In additional, it will be useful in the future if I ever need to find a quick reference or refreshment on some of the topic.  
 
 The content of this notebook will be time sequential. The notes will generally follow the sequence of the lectures with some minor change. The main topic will be summarized and put into a menu for quick reference.  
 
