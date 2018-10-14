@@ -120,7 +120,10 @@ If we are given a small dataset, we can use cross-validation to split our data i
 
 #### Transfer Learning:  
 **transfer learning** is a very useful technique that can speed the whole process up and rescue us when we have very few data and a powerful algortihm (to prevent overfitting.) Usually, the more data we have, the more layers of pre-trained model can we adjust and re-learn.  
-![model zoo](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_ModelZoo.png)  
+Caffe: ![github.com/BVLC/caffe/wiki/Model-Zoo](github.com/BVLC/caffe/wiki/Model-Zoo)  
+Pytorch: ![github.com/pytorch/vision](www.github.com/pytorch/vision)  
+TensorFlow: ![github.com/tensorflow/models](github.com/tensorflow/models)  
+![model zoo](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_PytorchPretrainedModels.png)  
  
 
   
