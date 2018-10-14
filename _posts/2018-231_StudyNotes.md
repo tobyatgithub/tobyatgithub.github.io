@@ -4,7 +4,7 @@ title: Study Notes of 231 CNN
 ---
 
 ## **General**
-This year, I decided to revist the class 231 offered by stanford online featured in [Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/)  
+This year, I decided to revist the class 231 offered by stanford online featured in [Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/).  
 One major reason is that I wasn't able to understand many details and reasoning behind it when I watch is last time around 2016. After gaining more experience, I now feel much more confident on the convolutional neural network and all the deep learning topics the class is covering. Plus, the content of the class is one of the best resource online about deep learning (as mentioned in [wild_ml's 2017 AI&DL Year Review](http://www.wildml.com/2017/12/ai-and-deep-learning-in-2017-a-year-in-review/)). Thus I feel an urge and necessity to learn it in a finer detail.  
 This blog here is by no means to copy & paste the lecture content---that will be wastful and meaningless. But instead, this blog serves more like a __'cheat sheet'__ of the materials.  
 From my previous experience, a 'cheat sheet' is really a great way to enforce student to really try hard summarizing what they have learned from one class, and thus a really helpful tool for studying. In additional, it will be useful in the future if I ever need to find a quick reference or refreshment on some of the topic.
@@ -86,6 +86,7 @@ There are 6 common active functions:
 4. Leaky ReLU (good. no saturation; computationally efficient; converges much faster than sigmoid and tanh; can be flexible for the leaking rate.)
 5. ELU (ok...good. all benefits from ReLU; closer to zero mean outputs; may have saturation at negative domain.)  
 6. Maxout (ok...good. generalizes ReLU and Leaky ReLU; doesn't saturate; doubling parameters per neuron.)  
+![active functions graph](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_nonlinear_activation_fs.png)  
 
 #### Model Ensemble:  
 Other than the previous terms (loss function, regularization, and optimization,) we can also use __model ensemble__ to further improve model performance (~+2%). Basically model ensemble contains two steps:  
@@ -100,7 +101,7 @@ After we have the model stucture decided, we can also do [data preprocess, weigh
   This is necessary because this will prevent out gradient to be on same direction if all data happen to have the same sign.  
   2. Normalize (x /= np.std(x, axis = 0)):  
   This is useful as it will balance the sensitivity of the input data so that all features are in the same range and contribute equally. Not commonly used for image tasks.
-
+![data preprocess intuition](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_Data_preprocessing2.png)  
 
 #### Weight Initialization:
 We need a good initialization because:
@@ -108,14 +109,19 @@ We need a good initialization because:
   2. small initialization will be bad as it will easily lead to gradient vanish (all grad = 0)
   3. big initialization will be bad as it will easily lead to all -1 or +1 gradient (dead network.) (???)
   4. as you can see, good initialization is hard, tricky, and necessary.
+![weight init illust](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_weight_Initialization.png)  
 
 #### HyperParameter Search:  
 **Hyperparameter** is the choices about the algorithm that we set rather than learn. The best choice of hyperparameters is very problem-dependent and must try them all and see what works best (on the validation dataset). Usually random serach is better than grid search in deep learning, and the search range shall be wide enough such that both ends are bad.  
+For deep learning, we usually have a large dataset, and a common way to conduct hyper parameter search is to split dataset into __training, validation, and testing datasets__. Where our main goal is to use training dataset to train our model, and change hyper paramerters to improve model's performance on validation dataset. And we only touch the testing dataset once for final report and evaludation.  
+If we are given a small dataset, we can use cross-validation to split our data into multiple folds (with one shared testing dataset, and several different combos of traning and validation.)  
+
+
 
 #### Transfer Learning:  
 **transfer learning** is a very useful technique that can speed the whole process up and rescue us when we have very few data and a powerful algortihm (to prevent overfitting.) Usually, the more data we have, the more layers of pre-trained model can we adjust and re-learn.  
-
-
+![model zoo](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_ModelZoo.png)  
+ 
 
   
 
