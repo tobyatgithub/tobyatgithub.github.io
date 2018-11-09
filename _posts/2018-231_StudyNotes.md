@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Study Notes of 231 CNN
+title: Study Notes of CS231n CNN for Visual Recognition
 ---
 
 ## **General**
@@ -49,7 +49,7 @@ continue
 
 __Useful debug tips : the first round of iteration shall give you a loss that you expect, otherwise you better check the code for bug.__  
 
-#### Loss Function:  
+#### Loss Function (Lecture 3):  
 Intuitively, **loss function** is the way to tell us how good our model is doing.  
   * Hinge loss (Multiclass SVM loss):  
   ![hinge loss img](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_hinge_loss.png)
@@ -59,7 +59,7 @@ Intuitively, **loss function** is the way to tell us how good our model is doing
   We want to use it because: 1. it gives a good interpretation in probability. 2. NLLL will  = 0 if everything is correct, and get larger as the answer get wronger.
   More info about the derivation of softmax with NLLL can be found [in this github note.](https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/)
 
-#### Regularization:  
+#### Regularization (Lecture 3 & 7):  
 Intuitively, **regularization** is the way to limit the complexity of weight to improve its performance on loss function. The common approach of regularization is to add randomness into the training process, and averaging out that randomness during testing time. By 'mess' the model with randomness, we make the model perform better on unseen data by preventing model overfit.  
 * l1, l2 regularizations: used to give smaller weight a stronger perference. These are commonly used in traditional machine learning models.  
 * dropout: at each time, we enforce the model to forget some learned neurons (or weights.) This provides a similar effect as having multile ensembling sub-models within one single model. 
@@ -67,7 +67,7 @@ Intuitively, **regularization** is the way to limit the complexity of weight to 
 * others: data augmentation for image (color jitter, axis flip,) fractional max pooling, stochastic depth...  
 
 
-#### Optimization
+#### Optimization (Lecture 3):  
 **optimization** is the process of finding the least worst weight for our loss function with the given data.  
 1. numericalgradient（approximated, slow, easy to write.)  
 2. analytical gradient (exact, fast, error-prone.)  
@@ -75,7 +75,8 @@ In parctice, we always use analytical gradient in the code. Numerical gradient c
 
 Among many optimization solutions, usually Adam is the best way to go, and LBFGS can be useful if full size batch is used for each training iteration.  
 
-* Problem of SGD:
+##### Improve your optimization (Lecture 6):  
+* Problem of SGD :
   1. data may have different sensitivity on different features, if so, with SGD --> slow progress + zig-zag behavior on weight learning (bad). 
   2. SGD easily stuck on local optimal (common on low dim problems) or saddle point (common on high dim problems.)
   --> to improve, people suggested SGD + momentem (x_t+1 = x_t - alpha * grad f(x_t) - alpha * rho * v_t) 
@@ -83,7 +84,13 @@ Among many optimization solutions, usually Adam is the best way to go, and LBFGS
 
 * Backpropagation = a technique to find the gradient by recusively using the chain rule to compute gradient with every variable. Based on computational graph (so..always think about your graph when designing a deep neural network.) Usually backpropagation comes with most main deep learning frameworks.  
 
-#### Active Functions:  
+#### Forward and Backward propagtation (Lecture 4):  
+Forward = process to compute the output of the node (e.g. y1 = W1 * x)  
+Backward = process to comput the gradient of the node (e.g. dW = x +reg * W)  
+
+One step in model = Data-->forward-->backward-->update
+
+#### Active Functions (Lecture 6):  
 **Active functions** are the non-linear functions you select to apply onto your linear layers, to capture non-linear relationships. Generally, use ReLU with a small learning rate --> try Leaky ReLU/Maxout/ELU if needed --> try tanh but don't expect much --> never sigmoid (srry sigmoid.)  
 
 There are 6 common active functions:
@@ -95,7 +102,7 @@ There are 6 common active functions:
 6. Maxout (ok...good. generalizes ReLU and Leaky ReLU; doesn't saturate; doubling parameters per neuron.)  
 ![active functions graph](https://github.com/tobyatgithub/tobyatgithub.github.io/blob/master/img/231_nonlinear_activation_fs.png)  
 
-#### Model Ensemble:  
+#### Model Ensemble (Lecture 6):  
 Other than the previous terms (loss function, regularization, and optimization,) we can also use __model ensemble__ to further improve model performance (~+2%). Basically model ensemble contains two steps:  
 1. Train multiple independent models (can use same model with different random init, or different models.)  
 2. At the test time, aggregate (usually average) their results to give final answer.  
@@ -103,7 +110,7 @@ Other than the previous terms (loss function, regularization, and optimization,)
 
 After we have the model stucture decided, we can also do [data preprocess, weight initialization] to further improve our model's performance.  
 
-#### Data Preprocess:
+#### Data Preprocess (Lecture 6):
   1. Zero-center (x -= np.mean(x, axis = 0)):
   This is necessary because this will prevent out gradient to be on same direction if all data happen to have the same sign.  
   2. Normalize (x /= np.std(x, axis = 0)):  
@@ -125,7 +132,7 @@ If we are given a small dataset, we can use cross-validation to split our data i
 
 
 
-#### Transfer Learning:  
+#### Transfer Learning (Lecture 7):  
 **transfer learning** is a very useful technique that can speed the whole process up and rescue us when we have very few data and a powerful algortihm (to prevent overfitting.) Usually, the more data we have, the more layers of pre-trained model can we adjust and re-learn.  
 Caffe: ![github.com/BVLC/caffe/wiki/Model-Zoo](github.com/BVLC/caffe/wiki/Model-Zoo)  
 Pytorch: ![github.com/pytorch/vision](www.github.com/pytorch/vision)  
