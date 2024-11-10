@@ -5,10 +5,12 @@ import { Calendar, Clock, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
-import { BlogPost } from "@/types/blog"
+import type { BlogPost } from "@/types/blog"
 import Markdown from "react-markdown"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
+import type { Components } from 'react-markdown'
+import { type ReactElement } from 'react'
 
 interface BlogPostProps {
   post: BlogPost
@@ -67,19 +69,21 @@ const BlogPost = ({ post }: BlogPostProps) => {
         <div className="prose prose-invert max-w-none">
           <Markdown
             components={{
-              code({ node, inline, className, children, ...props }) {
-                const match = /language-(\w+)/.exec(className || "")
+              code(props) {
+                const { children, className, node, ...rest } = props
+                const match = /language-(\w+)/.exec(className || '')
+                const inline = !className
+                
                 return !inline && match ? (
                   <SyntaxHighlighter
                     style={oneDark}
                     language={match[1]}
                     PreTag="div"
-                    {...props}
                   >
-                    {String(children).replace(/\n$/, "")}
+                    {String(children).replace(/\n$/, '')}
                   </SyntaxHighlighter>
                 ) : (
-                  <code className={className} {...props}>
+                  <code {...rest} className={className}>
                     {children}
                   </code>
                 )
