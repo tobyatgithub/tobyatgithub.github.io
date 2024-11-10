@@ -9,22 +9,37 @@ import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
-    title: "Project One",
-    description: "A full-stack web application for managing IoT devices",
-    image: "/project1.jpg",
-    tags: ["React", "Node.js", "MongoDB", "WebSocket"],
-    githubUrl: "https://github.com/username/project1",
-    liveUrl: "https://project1.demo",
+    title: "Smart Home Dashboard",
+    description: "A real-time dashboard for monitoring and controlling IoT devices in smart homes. Features include device management, automation rules, and energy consumption analytics.",
+    image: "/projects/smart-home.jpg",
+    tags: ["Next.js", "TypeScript", "WebSocket", "MongoDB", "TailwindCSS"],
+    githubUrl: "https://github.com/tobyatgithub/smart-home-dashboard",
+    liveUrl: "https://smart-home-dashboard.demo",
   },
   {
-    title: "Project Two",
-    description: "Real-time data visualization platform",
-    image: "/project2.jpg",
-    tags: ["Next.js", "TypeScript", "D3.js", "TailwindCSS"],
-    githubUrl: "https://github.com/username/project2",
-    liveUrl: "https://project2.demo",
+    title: "AI Code Review Assistant",
+    description: "An AI-powered tool that helps developers review code by analyzing pull requests, suggesting improvements, and detecting potential bugs using machine learning.",
+    image: "/projects/code-review.jpg",
+    tags: ["Python", "FastAPI", "React", "Docker", "OpenAI"],
+    githubUrl: "https://github.com/tobyatgithub/ai-code-review",
+    liveUrl: "https://ai-code-review.demo",
   },
-  // Add more projects as needed
+  {
+    title: "Hardware Monitor Pro",
+    description: "A cross-platform desktop application for monitoring hardware performance metrics, including CPU, GPU, memory usage, and temperature sensors.",
+    image: "/projects/hardware-monitor.jpg",
+    tags: ["Electron", "React", "Node.js", "C++", "Hardware APIs"],
+    githubUrl: "https://github.com/tobyatgithub/hardware-monitor",
+    liveUrl: "https://hardware-monitor.demo",
+  },
+  {
+    title: "DevOps Pipeline Builder",
+    description: "A visual tool for creating and managing CI/CD pipelines with drag-and-drop interfaces, template management, and integration with popular CI/CD platforms.",
+    image: "/projects/pipeline-builder.jpg",
+    tags: ["Vue.js", "TypeScript", "Node.js", "Docker", "Jenkins API"],
+    githubUrl: "https://github.com/tobyatgithub/pipeline-builder",
+    liveUrl: "https://pipeline-builder.demo",
+  }
 ]
 
 const ProjectsSection = () => {
