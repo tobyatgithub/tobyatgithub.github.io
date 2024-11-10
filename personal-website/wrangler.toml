@@ -1,8 +1,8 @@
 [build]
-command = "npm run build"
+command = "npm install && npm run build"  # Changed to run npm install first
 
 [build.upload]
 format = "directory"
 
-[pages]
-pages_build_output_dir = ".vercel/output/static"
+[site]  # Changed from [pages]
+bucket = ".vercel/output/static"  # Changed property name
