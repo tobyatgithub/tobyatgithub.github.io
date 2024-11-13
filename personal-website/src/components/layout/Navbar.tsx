@@ -11,7 +11,6 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
   { name: "Content", href: "/content" },
-  { name: "Contact", href: "/contact" },
 ]
 
 const Navbar = () => {
