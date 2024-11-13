@@ -2,17 +2,8 @@ name = "personal-website"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = ".next"
 
-[build]
-command = "npm ci && npm run build"
-
-[site]
-bucket = ".next/static"
-
-[build.upload]
-format = "service-worker"
+[env.preview]
+vars = { NODE_ENV = "development" }
 
 [env.production]
 vars = { NODE_ENV = "production" }
-
-[env.development]
-vars = { NODE_ENV = "development" }
