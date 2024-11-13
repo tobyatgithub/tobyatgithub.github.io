@@ -2,8 +2,8 @@ name = "personal-website"
 compatibility_date = "2024-01-01"
 
 [build]
-command = "npm run build"  # Removed npm install as it's done automatically
-output_dir = ".next"       # For Next.js output
+command = "npm ci &&npm run build"  # Removed npm install as it's done automatically
+pages_build_output_dir = ".next"       # For Next.js output
 
 [site]
 bucket = ".next/static"    # For Next.js static assets
