@@ -1,17 +1,16 @@
 name = "personal-website"
 compatibility_date = "2024-01-01"
+pages_build_output_dir = ".next"
 
 [build]
-command = "npm ci &&npm run build"  # Removed npm install as it's done automatically
-pages_build_output_dir = ".next"       # For Next.js output
+command = "npm ci && npm run build"
 
 [site]
-bucket = ".next/static"    # For Next.js static assets
+bucket = ".next/static"
 
 [build.upload]
-format = "service-worker"  # Better for Next.js applications
+format = "service-worker"
 
-# Optional: Add environment-specific configurations
 [env.production]
 vars = { NODE_ENV = "production" }
 
