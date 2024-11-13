@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { getBlogPost } from "@/data/blog-posts"
 import BlogPost from "@/components/blog/BlogPost"
 import { notFound } from "next/navigation"
