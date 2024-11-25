@@ -138,5 +138,5 @@ MIT License - feel free to use this code for your own personal website!
 
 **Toby Huang**
 - Website: [YourWebsite.com]
-- GitHub: [@YourGitHub]
-- LinkedIn: [Your LinkedIn]
+- GitHub: [@tobyatgithub]
+- LinkedIn: [tobyatlarge]

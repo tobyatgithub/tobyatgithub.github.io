@@ -52,14 +52,14 @@ const Navbar = () => {
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              href="https://github.com/YourGitHub"
+              href="https://github.com/tobyatgithub"
               className="text-gray-400 hover:text-gray-200"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="https://linkedin.com/in/YourLinkedIn"
+              href="https://linkedin.com/in/tobyatlarge"
               className="text-gray-400 hover:text-gray-200"
               aria-label="LinkedIn"
             >

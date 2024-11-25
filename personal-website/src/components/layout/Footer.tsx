@@ -32,14 +32,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-200 mb-4">Connect</h3>
             <div className="flex space-x-4">
               <Link
-                href="https://github.com/YourGitHub"
+                href="https://github.com/tobyatgithub"
                 className="text-gray-400 hover:text-gray-200"
                 aria-label="GitHub"
               >
                 <Github className="h-6 w-6" />
               </Link>
               <Link
-                href="https://linkedin.com/in/YourLinkedIn"
+                href="https://linkedin.com/in/tobyatlarge"
                 className="text-gray-400 hover:text-gray-200"
                 aria-label="LinkedIn"
               >

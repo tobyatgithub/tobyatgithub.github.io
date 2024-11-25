@@ -53,7 +53,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <Link 
-            href="https://github.com/YourGitHub"
+            href="https://github.com/tobyatgithub"
             className="text-gray-400 hover:text-gray-200 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -61,7 +61,7 @@ const HeroSection = () => {
             <Github className="h-6 w-6" />
           </Link>
           <Link 
-            href="https://linkedin.com/in/YourLinkedIn"
+            href="https://linkedin.com/in/tobyatlarge"
             className="text-gray-400 hover:text-gray-200 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
